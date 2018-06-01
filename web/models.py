@@ -31,7 +31,8 @@ class Task(models.Model):
     title = models.CharField(max_length=256)
     subtitle = models.CharField(max_length=256)
     context = models.TextField()
-
+    
+#リレーション ↓
 class Table_auth(models.Model):
     project_id = models.ForeignKey(Project, related_name='projects', on_delete=models.CASCADE, default="0")
     user_id = models.ForeignKey(User, related_name='users', on_delete=models.CASCADE, default="0")
