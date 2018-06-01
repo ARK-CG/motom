@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 #User=>https://docs.djangoproject.com/en/2.0/ref/contrib/auth/
+# username, email, password,
+#https://github.com/django-guardian/django-guardian
 
 # Create your models here.
 """例
@@ -31,7 +33,7 @@ class Task(models.Model):
     title = models.CharField(max_length=256)
     subtitle = models.CharField(max_length=256)
     context = models.TextField()
-    
+
 #リレーション ↓
 class Table_auth(models.Model):
     project_id = models.ForeignKey(Project, related_name='projects', on_delete=models.CASCADE, default="0")
