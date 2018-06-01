@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User\
+from django.contrib.auth.models import User
 #User=>https://docs.djangoproject.com/en/2.0/ref/contrib/auth/
 
 # Create your models here.
@@ -14,9 +14,6 @@ class Card(models.Model):
     card_caregory = models.TextField()
     user = models.ForeignKey(User,related_name='cards',on_delete=models.CASCADE,default="0")
 """
-
-class User(models.Model):
-    
 
 class Project(models.Model):
     status = models.BooleanField(default=True)
@@ -47,4 +44,4 @@ class Table_tag(models.Model):
     status = models.BooleanField(default=True)
     project_id = models.ForeignKey(Project,on_delete=models.CASCADE, default="0")
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, default="0")
-    task =  models.ForeignKey(Task)
+    task =  models.ForeignKey(Task, on_delete=models.CASCADE, default="0")
