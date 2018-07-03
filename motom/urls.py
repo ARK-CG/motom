@@ -18,4 +18,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('^media/(?P<path>.*)','django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 ]
